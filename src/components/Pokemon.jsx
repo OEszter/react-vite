@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardMedia from '@mui/material/CardMedia'
@@ -28,7 +29,9 @@ function Pokemon({ pokemon }) {
 	return (
 		<Card 
 			className="pokemon"
-			sx={{ width: 200}} //Az sx attribútum, prop, amit rá tudunk tenni a miu-ra CSS formázásként. Komponens szinten tudjuk megadni adott helyen a formázást. Mint a HTML-ben inline adjuk meg a formázást.
+			sx={{ 
+				width: 200,
+				minHeight: 400}} //Az sx attribútum, prop, amit rá tudunk tenni a miu-ra CSS formázásként. Komponens szinten tudjuk megadni adott helyen a formázást. Mint a HTML-ben inline adjuk meg a formázást.
 		>
 
 		<CardHeader
@@ -46,7 +49,7 @@ function Pokemon({ pokemon }) {
 			<CardMedia
 			component="img"
 			image={pokeData.sprites.front_default}
-			alt={pokemon.data}
+			alt={pokemon.name}
 			/>
 
 			<CardContent>
