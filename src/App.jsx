@@ -20,6 +20,7 @@ function App() {
     if (pokemonsData) {
       observer.observe(ref.current)
     }
+
     return () => observer.disconnect() // clean-up function
   }, [ref, pokemonsData])
 
@@ -42,12 +43,18 @@ function App() {
     },
   });
 
-  useEffect(() => console.log(pokemons), [pokemons])
+  const whiteTheme = createTheme({
+    palette: {
+      mode: 'light',
+    },
+  })
 
-  useEffect(() => {
+  //useEffect(() => console.log(pokemons), [pokemons])
+
+/*   useEffect(() => {
     console.log(pokemonsData)
     console.log(pokemons)
-  }, [pokemons, pokemonsData])
+  }, [pokemons, pokemonsData]) */
 
 
   useEffect(() => {
@@ -61,7 +68,7 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={dark ? darkTheme : ""}>
+      <ThemeProvider theme={dark ? darkTheme : whiteTheme}>
         
         <Button 
           variant="contained"
