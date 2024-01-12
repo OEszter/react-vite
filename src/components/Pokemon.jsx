@@ -28,7 +28,7 @@ function Pokemon({ pokemon }) {
 	return (
 		<Card 
 			className="pokemon"
-			sx={{ width: 200}}
+			sx={{ width: 200}} //Az sx attribútum, prop, amit rá tudunk tenni a miu-ra CSS formázásként. Komponens szinten tudjuk megadni adott helyen a formázást. Mint a HTML-ben inline adjuk meg a formázást.
 		>
 
 		<CardHeader
@@ -37,6 +37,12 @@ function Pokemon({ pokemon }) {
 
 		{pokeData &&
 			<> 
+			<CardContent 
+				sx={{ padding: "0 16px 16px 16px" }}
+				>
+				<h2>#{pokeData.id}</h2>
+			</CardContent>
+
 			<CardMedia
 			component="img"
 			image={pokeData.sprites.front_default}
